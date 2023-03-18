@@ -1,0 +1,17 @@
+program Menghitung_Rata_Rata;
+var
+a, b, c, total: real;
+rata_rata: real;
+begin
+writeln('Masukkan bilangan pertama:');
+readln(a);
+writeln('Masukkan bilangan kedua:');
+readln(b);
+writeln('Masukkan bilangan ketiga:');
+readln(c);
+
+total := a + b + c;
+rata_rata := total / 3;
+
+writeln('Rata-rata dari ketiga bilangan adalah: ', rata_rata:0:2);
+end.

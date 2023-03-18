@@ -1,0 +1,68 @@
+program MemasakRoti;
+
+var
+  tepung, ragi, garam, air, mentega, adonan, waktuDiam, pengembangan, waktuPengembangan, waktuUleni, waktuDiamLagi, suhuOven, waktuPemanasanOven, waktuPanggang, waktuPanggangMaks, waktuDingin: real;
+
+begin
+  // Siapkan bahan-bahan yang diperlukan
+  tepung := 500;
+  ragi := 10;
+  garam := 10;
+  air := 300;
+  mentega := 50;
+
+  // Campurkan tepung, ragi, dan garam dalam sebuah wadah.
+  adonan := tepung + ragi + garam;
+
+  // Tambahkan air sedikit-sedikit sambil diaduk hingga adonan tercampur rata dan kalis.
+  writeln('Masukkan air sedikit-sedikit sambil diaduk hingga adonan tercampur rata dan kalis:');
+  repeat
+    readln(air);
+    adonan := adonan + air;
+  until adonan >= 800;
+
+  // Diamkan adonan selama kurang lebih 30 menit atau sampai adonan mengembang dua kali lipat.
+  waktuDiam := 30;
+  pengembangan := 2;
+  waktuPengembangan := waktuDiam / pengembangan;
+
+  // Setelah adonan mengembang, uleni kembali adonan selama beberapa menit.
+  waktuUleni := 5;
+
+  // Bentuk adonan menjadi bulatan dan letakkan di atas loyang yang telah diolesi mentega.
+  writeln('Bentuk adonan menjadi bulatan dan letakkan di atas loyang yang telah diolesi mentega.');
+
+  // Diamkan adonan selama kurang lebih 15 menit.
+  waktuDiamLagi := 15;
+
+  // Panaskan oven dengan suhu 180 derajat Celsius selama kurang lebih 10 menit.
+  suhuOven := 180;
+  waktuPemanasanOven := 10;
+
+  // Setelah oven panas, masukkan loyang ke dalam oven dan panggang selama kurang lebih 30-40 menit atau sampai roti matang dan berwarna kecoklatan.
+  waktuPanggang := 30;
+  waktuPanggangMaks := 40;
+
+  if (suhuOven >= 180) then
+  begin
+    if (waktuPemanasanOven >= 10) then
+    begin
+      if (waktuPanggang >= 30) and (waktuPanggang <= 40) then
+      begin
+        writeln('Masukkan loyang ke dalam oven dan panggang selama kurang lebih ', waktuPanggang:0:0, '-', waktuPanggangMaks:0:0, ' menit atau sampai roti matang dan berwarna kecoklatan.');
+      end
+      else
+      begin
+        writeln('Waktu panggang tidak sesuai.');
+      end;
+    end
+    else
+    begin
+      writeln('Waktu pemanasan oven tidak cukup.');
+    end;
+  end
+  else
+  begin
+    writeln('Suhu oven tidak cukup.');
+  end;
+

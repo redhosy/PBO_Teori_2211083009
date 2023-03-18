@@ -1,0 +1,39 @@
+program MenggunakanKomputer;
+
+var
+  username, password: string;
+  isLoginSuccess: boolean;
+  isComputerAvailable: boolean;
+
+begin
+  // Masukkan username dan password untuk login ke komputer.
+  writeln('Masukkan username dan password untuk login ke komputer:');
+  readln(username);
+  readln(password);
+
+  // Verifikasi username dan password yang dimasukkan.
+  isLoginSuccess := (username = 'admin') and (password = '123456');
+
+  if isLoginSuccess then
+  begin
+    // Periksa ketersediaan komputer di laboratorium.
+    isComputerAvailable := true; // anggap saja komputer tersedia
+
+    if isComputerAvailable then
+    begin
+      // Gunakan komputer untuk melakukan tugas yang diberikan.
+      writeln('Komputer tersedia. Gunakan komputer untuk melakukan tugas yang diberikan.');
+    end
+    else
+    begin
+      // Jika komputer tidak tersedia, cari komputer lain atau tunggu hingga tersedia.
+      writeln('Komputer tidak tersedia. Cari komputer lain atau tunggu hingga tersedia.');
+    end;
+  end
+  else
+  begin
+    // Jika login gagal, minta pengguna untuk memasukkan username dan password yang benar.
+    writeln('Username atau password salah. Masukkan username dan password yang benar.');
+  end;
+
+end.
